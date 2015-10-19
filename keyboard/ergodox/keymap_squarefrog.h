@@ -145,15 +145,15 @@ enum function_id {
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
-    ACTION_DEFAULT_LAYER_SET(0)                     // FN0 - switch to Layer 0
-    ACTION_DEFAULT_LAYER_SET(1)                     // FN1 - switch to Layer 1
-    ACTION_DEFAULT_LAYER_SET(2)                     // FN2 - switch to Layer 2
-    ACTION_LAYER_MOMENTARY(1),                      // FN3 - push Layer 1
-    ACTION_FUNCTION(TEENSY_KEY),                    // FN4 - Teensy key
-    ACTION_MODS_KEY(MOD_LALT, KC_F11)               // FN5 - Take in game screenshot ????
-    ACTION_MODS_KEY(MOD_LALT, KC_F12)               // FN6 - Save shadow play ????
-    ACTION_MODS_KEY(MOD_LSFT, KC_QUOT)              // FN7 - "
-    ACTION_MODS_KEY(MOD_LSFT, KC_SCLN)              // FN8 - :
+    ACTION_DEFAULT_LAYER_SET(0),                     // FN0 - switch to Layer 0
+    ACTION_DEFAULT_LAYER_SET(1),                     // FN1 - switch to Layer 1
+    ACTION_DEFAULT_LAYER_SET(2),                     // FN2 - switch to Layer 2
+    ACTION_LAYER_MOMENTARY(1),                       // FN3 - push Layer 1
+    ACTION_FUNCTION(TEENSY_KEY),                     // FN4 - Teensy key
+    ACTION_MODS_KEY(MOD_LALT, KC_F11),               // FN5 - Take in game screenshot ????
+    ACTION_MODS_KEY(MOD_LALT, KC_F12),               // FN6 - Save shadow play ????
+    ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),              // FN7 - "
+    ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),              // FN8 - :
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
