@@ -1,7 +1,9 @@
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
      * This is my current layout which serves dual purpose. The default layer is a standard QWERTY
-     * layout with easy access to brackets, when coding for Objective-C.
+     * layout with easy access to brackets, when coding for Objective-C. There is also a layout
+     * that is geared more towards gaming so most of the more important keys reside on the left
+     * hand. Additionally, there is a helper layout which provides Vim-like access to arrow keys.
      *
      * Layer 0: The basic keyboard
      * Layer 1: Arrow keys, function keys, helper functions for Xcode, Photoshop etc
@@ -49,7 +51,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 |      |      |      |       |      |      |      |
      *                                 `--------------------'       `--------------------'
      *
-     * Keymap 1: Gaming Layer (Windows)
+     * Keymap 2: Gaming Layer (Windows)
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |  Esc   |   1  |   2  |   3  |   4  |   5  | FN5  |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
@@ -57,7 +59,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |  Tab   |   Q  |   W  |   E  |   R  |   Y  | FN6  |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------| +L1  |           |      |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtrl| LGui | LAlt | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
@@ -142,7 +144,7 @@ enum function_id {
 };
 
 /*
- * Fn action definition
+ * Fn action definition - 32 Fn can be defined at most
  */
 static const uint16_t PROGMEM fn_actions[] = {
     ACTION_DEFAULT_LAYER_SET(0),                     // FN0 - switch to Layer 0
