@@ -56,19 +56,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |  Esc   |   1  |   2  |   3  |   4  |   5  | FN5  |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |  Tab   |   Q  |   W  |   E  |   R  |   Y  | FN6  |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
+     * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN6  |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------|      |           | FN1  |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LCtrl| LGui | LAlt | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
+     *   | LCtrl|      |   Y  | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
      *                                        |CpsLck| Del  |       | PgUp | PgDn |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      | LAlt |       | RAlt |      |      |
-     *                                 | BkSp | Space|------|       |------| Enter| Space|
+     *                                 | Space| Enter|------|       |------| Enter| Space|
      *                                 |      |      | LGui |       | RGui |      |      |
      *                                 `--------------------'       `--------------------'
      *
@@ -118,19 +118,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layout: layer 2: gaming in windows
         // left hand
-        ESC,   1,   2,   3,    4,   5,   FN5,
-        TAB,   Q,   W,   E,    R,   T,   FN6,
-        LCTL,  A,   S,   D,    F,   G,
-        LSFT,  Z,   X,   C,    V,   B,   FN1,
-        LCTL, LGUI,LALT, VOLD, VOLU,
+        ESC,   1,   2,   3,   4,   5,   FN5,
+        TAB,   Q,   W,   E,   R,   T,   FN6,
+        LCTL,  A,   S,   D,   F,   G,
+        LSFT,  Z,   X,   C,   V,   B,   NO,
+        LCTL, NO,   Y, VOLD, VOLU,
                                       CAPS, DEL,
                                             LALT,
-                                 BSPC, FN3, LGUI,
+                                  SPC, ENT, LGUI,
         // right hand
            MINS,  6,   7,    8,   9,   0,   EQL,
            RBRC,  Y,   U,    I,   O,   P,   BSLS,
                   H,   J,    K,   L,  SCLN, QUOT,
-           NO,    N,   M,  COMM, DOT, SLSH, RSFT,
+           FN1,   N,   M,  COMM, DOT, SLSH, RSFT,
                        NO,   NO, RALT,RGUI, RCTL,
         PGUP,PGDN,
         RALT,
