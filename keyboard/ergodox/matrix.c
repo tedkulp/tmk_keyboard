@@ -118,6 +118,64 @@ uint8_t matrix_scan(void)
     }
 #endif
 
+#ifdef KEYMAP_SQUAREFROG
+    uint8_t layer = biton32(layer_state);
+
+    ergodox_board_led_off();
+    ergodox_left_led_1_off();
+    ergodox_left_led_2_off();
+    ergodox_left_led_3_off();
+
+    switch (layer) {
+        case 1:
+            // top blue
+            // XXO
+            ergodox_left_led_1_on();
+            break;
+        case 2:
+            // white
+            // XOX
+            ergodox_left_led_2_on();
+            break;
+        case 3:
+            // top blue and white
+            // XOO
+            ergodox_left_led_1_on();
+            ergodox_left_led_2_on();
+            break;
+        case 4:
+            // bottom blue
+            // OXX
+            ergodox_left_led_3_on();
+            break;
+        case 5:
+            // top blue
+            // bottom blue
+            // OXO
+            ergodox_left_led_1_on();
+            ergodox_left_led_3_on();
+            break;
+        case 6:
+            // bottom blue
+            // OOX
+            ergodox_left_led_2_on();
+            ergodox_left_led_3_on();
+            break;
+        case 7:
+            // all on
+            // OOO
+            ergodox_left_led_1_on();
+            ergodox_left_led_2_on();
+            ergodox_left_led_3_on();
+            break;
+        default:
+            // none
+            break;
+    }
+
+    mcp23018_status = ergodox_left_leds_update();
+#endif
+
 #ifdef KEYMAP_CUB
     uint8_t layer = biton32(layer_state);
 
