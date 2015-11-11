@@ -38,7 +38,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | CapsLk |      |      |      |      |      |------|           |------| Left | Down |  Up  | Right|      |        |
-     * |--------+------+------+------+------+------|      |           | -L1  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------| +L2  |           | -L0  |------+------+------+------+------+--------|
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   |      |      | Mute | Vol- | Vol+ |                                       |      |      |      |      |      |
@@ -59,7 +59,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN6  |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|      |           | FN1  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------| +L3  |           | -L1  |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtrl|      |   Y  | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
@@ -100,7 +100,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN4, F1,  F2,  F3,  F4,  F5,  F11,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, FN2,
         TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
@@ -119,7 +119,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layout: layer 2: gaming in windows
         // left hand
         ESC,   1,   2,   3,   4,   5,   FN5,
-        TAB,   Q,   W,   E,   R,   T,   FN6,
+        TAB,   Q,   W,   E,   R,   T,   FN9,
         LCTL,  A,   S,   D,   F,   G,
         LSFT,  Z,   X,   C,   V,   B,   NO,
         LCTL, NO,   Y, VOLD, VOLU,
@@ -170,9 +170,9 @@ enum function_id {
  * Fn action definition - 32 Fn can be defined at most
  */
 static const uint16_t PROGMEM fn_actions[] = {
-    ACTION_DEFAULT_LAYER_SET(0),                     // FN0 - switch to Layer 0
-    ACTION_DEFAULT_LAYER_SET(1),                     // FN1 - switch to Layer 1
-    ACTION_DEFAULT_LAYER_SET(2),                     // FN2 - switch to Layer 2
+    ACTION_LAYER_SET(0, ON_PRESS),                   // FN0 - switch to Layer 0
+    ACTION_LAYER_SET(1, ON_PRESS),                   // FN1 - switch to Layer 1
+    ACTION_LAYER_SET(2, ON_PRESS),                   // FN2 - switch to Layer 2
     ACTION_LAYER_MOMENTARY(1),                       // FN3 - push Layer 1
     ACTION_FUNCTION(TEENSY_KEY),                     // FN4 - Teensy key
     ACTION_MODS_KEY(MOD_LALT, KC_F11),               // FN5 - Take in game screenshot ????
