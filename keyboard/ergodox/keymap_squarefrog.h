@@ -59,13 +59,13 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN6  |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------| +L3  |           | -L1  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------|      |           | -L1  |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LCtrl|      |   Y  | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
+     *   | LCtrl|      |      | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |CpsLck| Del  |       | PgUp | PgDn |
+     *                                        |   T  |   Y  |       | PgUp | PgDn |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      | LAlt |       | RAlt |      |      |
      *                                 | Space| Enter|------|       |------| Enter| Space|
@@ -119,11 +119,11 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layout: layer 2: gaming in windows
         // left hand
         ESC,   1,   2,   3,   4,   5,   FN5,
-        TAB,   Q,   W,   E,   R,   T,   FN9,
+        TAB,   Q,   W,   E,   R,   T,   FN6,
         LCTL,  A,   S,   D,   F,   G,
         LSFT,  Z,   X,   C,   V,   B,   NO,
-        LCTL, NO,   Y, VOLD, VOLU,
-                                      CAPS, DEL,
+        LCTL, NO,  NO, VOLD, VOLU,
+                                         T, Y,
                                             LALT,
                                   SPC, ENT, LGUI,
         // right hand
