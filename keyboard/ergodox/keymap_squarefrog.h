@@ -5,11 +5,11 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * that is geared more towards gaming so most of the more important keys reside on the left
      * hand. Additionally, there is a helper layout which provides Vim-like access to arrow keys.
      *
-     * Layer 0: The basic keyboard
-     * Layer 1: Arrow keys, function keys, helper functions for Xcode, Photoshop etc
-     * Layer 2: Gaming specific layout
+     * Layer 0: The basic keyboard, geared towards an OS X compliant layout.
+     * Layer 1: Arrow keys, function keys, helper functions for Xcode, Photoshop etc.
+     * Layer 2: Gaming specific layout, for use in Windows.
      *
-     * Keymap 0: Default Layer
+     * Keymap 0: Default Qwerty Layer
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |  Esc   |   1  |   2  |   3  |   4  |   5  |  ~   |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
@@ -30,7 +30,31 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 |      |      | LGui |       | RGui |      |      |
      *                                 `--------------------'       `--------------------'
      *
-     * Keymap 1: Helper functions
+     */
+
+    KEYMAP(
+        // left hand
+        ESC,   1,   2,   3,    4,   5,   GRV,
+        TAB,   Q,   W,   E,    R,   T,   LBRC,
+        LCTL,  A,   S,   D,    F,   G,
+        LSFT,  Z,   X,   C,    V,   B,   FN1,
+        LCTL, LALT,LGUI, VOLD, VOLU,
+                                      CAPS, DEL,
+                                            LALT,
+                                 BSPC,FN11, LGUI,
+        // right hand
+           MINS,  6,   7,    8,   9,   0,   EQL,
+           RBRC,  Y,   U,    I,   O,   P,   BSLS,
+                  H,   J,    K,   L,  SCLN, QUOT,
+           NO,    N,   M,   COMM, DOT, SLSH, RSFT,
+                       FN22,FN23, RGUI,RALT, RCTL,
+        PGUP,PGDN,
+        RALT,
+        RGUI, ENT, SPC
+    ),
+
+    /*
+     * Layer 1: Helper functions
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * | Teensy |  F1  |  F2  |  F3  |  F4  |  F5  |  F11 |           |  F12 |  F6  |  F7  |  F8  |  F9  |  F10 |        |
@@ -38,7 +62,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | CapsLk |      |      |      |      |      |------|           |------| Left | Down |  Up  | Right|      |        |
-     * |--------+------+------+------+------+------| +L2  |           | -L0  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------| +L2  |           | -L1  |------+------+------+------+------+--------|
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   |      |      | Mute | Vol- | Vol+ |                                       |      |      |      |      |      |
@@ -51,57 +75,15 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 |      |      |      |       |      |      |      |
      *                                 `--------------------'       `--------------------'
      *
-     * Keymap 2: Gaming Layer (Windows)
-     *
-     * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |  Esc   |   1  |   2  |   3  |   4  |   5  | FN5  |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
-     * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN6  |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
-     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|      |           | -L1  |------+------+------+------+------+--------|
-     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
-     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LCtrl|      |      | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
-     *   `----------------------------------'                                       `----------------------------------'
-     *                                        ,-------------.       ,-------------.
-     *                                        |   T  |   Y  |       | PgUp | PgDn |
-     *                                 ,------|------|------|       |------+------+------.
-     *                                 |      |      | LAlt |       | RAlt |      |      |
-     *                                 | Space| Enter|------|       |------| Enter| Space|
-     *                                 |      |      | LGui |       | RGui |      |      |
-     *                                 `--------------------'       `--------------------'
-     *
      */
 
-    KEYMAP(  // layout: layer 0: default
+    KEYMAP(
         // left hand
-        ESC,   1,   2,   3,    4,   5,   GRV,
-        TAB,   Q,   W,   E,    R,   T,   LBRC,
-        LCTL,  A,   S,   D,    F,   G,
-        LSFT,  Z,   X,   C,    V,   B,   FN1,
-        LCTL, LALT,LGUI, VOLD, VOLU,
-                                      CAPS, DEL,
-                                            LALT,
-                                 BSPC, FN3, LGUI,
-        // right hand
-           MINS,  6,   7,    8,   9,   0,   EQL,
-           RBRC,  Y,   U,    I,   O,   P,   BSLS,
-                  H,   J,    K,   L,  SCLN, QUOT,
-           NO,    N,   M,  COMM, DOT, SLSH, RSFT,
-                       FN7, FN8, RGUI,RALT, RCTL,
-        PGUP,PGDN,
-        RALT,
-        RGUI, ENT, SPC
-    ),
-
-    KEYMAP(  // layout: layer 1: helper functions
-        // left hand
-        FN4, F1,  F2,  F3,  F4,  F5,  F11,
+        FN31, F1,  F2,  F3,  F4,  F5,  F11,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, FN2,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,MUTE,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
@@ -116,14 +98,38 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS
     ),
 
-    KEYMAP(  // layout: layer 2: gaming in windows
+    /*
+     * Keymap 2: Gaming Layer (Windows)
+     *
+     * ,--------------------------------------------------.           ,--------------------------------------------------.
+     * |  Esc   |   1  |   2  |   3  |   4  |   5  | FN20 |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
+     * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+     * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN21 |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
+     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+     * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
+     * |--------+------+------+------+------+------|      |           | -L2  |------+------+------+------+------+--------|
+     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
+     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+     *   | LCtrl| Play | Next | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
+     *   `----------------------------------'                                       `----------------------------------'
+     *                                        ,-------------.       ,-------------.
+     *                                        |  gg  |   Y  |       | PgUp | PgDn |
+     *                                 ,------|------|------|       |------+------+------.
+     *                                 |      |      | LAlt |       | RAlt |      |      |
+     *                                 | Space| Enter|------|       |------| Enter| Space|
+     *                                 |      |      | LGui |       | RGui |      |      |
+     *                                 `--------------------'       `--------------------'
+     *
+     */
+
+    KEYMAP(
         // left hand
-        ESC,   1,   2,   3,   4,   5,   FN5,
-        TAB,   Q,   W,   E,   R,   T,   FN6,
+        ESC,   1,   2,   3,   4,   5,  FN20,
+        TAB,   Q,   W,   E,   R,   T,  FN21,
         LCTL,  A,   S,   D,   F,   G,
         LSFT,  Z,   X,   C,   V,   B,   NO,
-        LCTL, NO,  NO, VOLD, VOLU,
-                                         T, Y,
+        LCTL,MPLY,MNXT, VOLD, VOLU,
+                                       FN24, Y,
                                             LALT,
                                   SPC, ENT, LGUI,
         // right hand
@@ -138,7 +144,30 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*
-    KEYMAP(  // layout: layer X: Template
+     * Layer X: Template
+     *
+     * ,--------------------------------------------------.           ,--------------------------------------------------.
+     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+     * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+     * |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        |
+     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+     *   |      |      |      |      |      |                                       |      |      |      |      |      |
+     *   `----------------------------------'                                       `----------------------------------'
+     *                                        ,-------------.       ,-------------.
+     *                                        |      |      |       |      |      |
+     *                                 ,------|------|------|       |------+------+------.
+     *                                 |      |      |      |       |      |      |      |
+     *                                 |      |      |------|       |------|      |      |
+     *                                 |      |      |      |       |      |      |      |
+     *                                 `--------------------'       `--------------------'
+     *
+     */
+    /*
+    KEYMAP(
         // left hand
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -166,21 +195,51 @@ enum function_id {
     TEENSY_KEY,
 };
 
+enum macro_id {
+    GOOD_GAME,
+};
+
 /*
  * Fn action definition - 32 Fn can be defined at most
  */
 static const uint16_t PROGMEM fn_actions[] = {
-    ACTION_LAYER_SET(0, ON_PRESS),                   // FN0 - switch to Layer 0
-    ACTION_LAYER_SET(1, ON_PRESS),                   // FN1 - switch to Layer 1
-    ACTION_LAYER_SET(2, ON_PRESS),                   // FN2 - switch to Layer 2
-    ACTION_LAYER_MOMENTARY(1),                       // FN3 - push Layer 1
-    ACTION_FUNCTION(TEENSY_KEY),                     // FN4 - Teensy key
-    ACTION_MODS_KEY(MOD_LALT, KC_F11),               // FN5 - Take in game screenshot ????
-    ACTION_MODS_KEY(MOD_LALT, KC_F12),               // FN6 - Save shadow play ????
-    ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),              // FN7 - "
-    ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),              // FN8 - :
+    // Layer shifting
+    [0] = ACTION_LAYER_SET(0, ON_PRESS),           // Switch to Layer 0
+    [1] = ACTION_LAYER_SET(1, ON_PRESS),           // Switch to Layer 1
+    [2] = ACTION_LAYER_SET(2, ON_PRESS),           // Switch to Layer 2
+//  [3] = ACTION_LAYER_SET(3, ON_PRESS),           // Switch to Layer 3
+
+    // Layer toggling
+    [11] = ACTION_LAYER_MOMENTARY(1),              // Push Layer 1
+
+    // Short modifier shortcuts
+    [20] = ACTION_MODS_KEY(MOD_LALT, KC_F11),      // Take in game screenshot ????
+    [21] = ACTION_MODS_KEY(MOD_LALT, KC_F12),      // Save shadow play ????
+    [22] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),     // Shift+' - "
+    [23] = ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),     // Shift+; - :
+    [24] = ACTION_MACRO(GOOD_GAME),                // Macro: say `gg`
+
+    // Teensy
+    [31] = ACTION_FUNCTION(TEENSY_KEY),            // Teensy key
 };
 
+/*
+ * Macro definition
+ */
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+    switch (id) {
+        case GOOD_GAME:
+            return (record->event.pressed ?
+                    MACRO( I(30), T(Y), T(G), T(G), T(ENT), END ) :
+                    MACRO_NONE );
+    }
+    return MACRO_NONE;
+}
+
+/*
+ * User defined action function
+ */
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
 {
     print("action_function called\n");
