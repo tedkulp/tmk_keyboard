@@ -65,7 +65,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+------+------+------+------+------| +L2  |           | -L1  |------+------+------+------+------+--------|
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   |      |      | Mute | Vol- | Vol+ |                                       |      |      |      |      |      |
+     *   |      | Mute | Play |  RW  |  FF  |                                       |      |      |      |      |      |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
      *                                        |      |      |       |      |      |
@@ -83,7 +83,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, FN2,
-        TRNS,TRNS,MUTE,TRNS,TRNS,
+        TRNS,MUTE,MPLY,MRWD,MFFD,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
