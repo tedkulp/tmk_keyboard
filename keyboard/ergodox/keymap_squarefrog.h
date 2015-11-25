@@ -17,7 +17,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |  Tab   |   Q  |   W  |   E  |   R  |   Y  |  [   |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------| +L1  |           |      |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------| +L2  |           |      |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtrl| LAlt | LGui | Vol- | Vol+ |                                       |   "  |   :  | RGui | RAlt | RCtrl |
@@ -37,7 +37,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ESC,   1,   2,   3,    4,   5,   GRV,
         TAB,   Q,   W,   E,    R,   T,   LBRC,
         LCTL,  A,   S,   D,    F,   G,
-        LSFT,  Z,   X,   C,    V,   B,   FN1,
+        LSFT,  Z,   X,   C,    V,   B,   FN2,
         LCTL, LALT,LGUI, VOLD, VOLU,
                                       CAPS, DEL,
                                             LALT,
