@@ -59,9 +59,9 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * | Teensy |  F1  |  F2  |  F3  |  F4  |  F5  |  F11 |           |  F12 |  F6  |  F7  |  F8  |  F9  |  F10 |        |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+     * |        |      |      |      |      |      |      |           |      |      | FN25 |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * | CapsLk |      |      |      |      |      |------|           |------| Left | Down |  Up  | Right|      |        |
+     * | CapsLk |      |      |      |      | FN26 |------|           |------| Left | Down |  Up  | Right|      |        |
      * |--------+------+------+------+------+------| +L2  |           | -L1  |------+------+------+------+------+--------|
      * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -81,7 +81,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         FN31, F1,  F2,  F3,  F4,  F5,  F11,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        CAPS,TRNS,TRNS,TRNS,TRNS,FN26,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, FN2,
         TRNS,MUTE,MPLY,MRWD,MFFD,
                                       TRNS,TRNS,
@@ -89,7 +89,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  TRNS,TRNS,TRNS,
         // right hand
              F12, F6,  F7,  F8,  F9,  F10, TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,FN25,TRNS,TRNS,TRNS,TRNS,
                   LEFT,DOWN,UP,  RGHT,TRNS,TRNS,
              FN0, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                        TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -218,6 +218,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     [22] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),     // Shift+' - "
     [23] = ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),     // Shift+; - :
     [24] = ACTION_MACRO(GOOD_GAME),                // Macro: say `gg`
+    [25] = ACTION_MODS_KEY(MOD_LCTL | MOD_LALT | MOD_LGUI, KC_U), // Test class: ctrl+alt+cmd+u
+    [26] = ACTION_MODS_KEY(MOD_LCTL | MOD_LALT | MOD_LGUI, KC_G), // Test class again: ctrl+alt+cmd+g
 
     // Teensy
     [31] = ACTION_FUNCTION(TEENSY_KEY),            // Teensy key
