@@ -63,9 +63,9 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | CapsLk |      |      |      |      | FN26 |------|           |------| Left | Down |  Up  | Right|      |        |
      * |--------+------+------+------+------+------| +L2  |           | -L1  |------+------+------+------+------+--------|
-     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+     * |        |      |      |      |      |      |      |           |      |      | Mute |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   |      | Mute | Play |  RW  |  FF  |                                       |      |      |      |      |      |
+     *   |      |      | Play |  RW  |  FF  |                                       |      |      |      |      |      |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
      *                                        |      |      |       |      |      |
@@ -83,7 +83,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         CAPS,TRNS,TRNS,TRNS,TRNS,FN26,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, FN2,
-        TRNS,MUTE,MPLY,MRWD,MFFD,
+        TRNS,TRNS,MPLY,MRWD,MFFD,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
@@ -91,7 +91,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              F12, F6,  F7,  F8,  F9,  F10, TRNS,
              TRNS,TRNS,FN25,TRNS,TRNS,TRNS,TRNS,
                   LEFT,DOWN,UP,  RGHT,TRNS,TRNS,
-             FN0, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             FN0, TRNS,MUTE,TRNS,TRNS,TRNS,TRNS,
                        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
