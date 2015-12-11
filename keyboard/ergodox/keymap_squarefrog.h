@@ -236,7 +236,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     switch (id) {
         case GOOD_GAME:
             return (record->event.pressed ?
-                    MACRO( I(70), T(Y), T(G), T(G), T(ENT), END ) :
+                    MACRO( I(70), T(T), T(G), T(G), T(ENT), END ) :
                     MACRO_NONE );
     }
     return MACRO_NONE;
