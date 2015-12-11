@@ -100,6 +100,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /*
      * Keymap 2: Gaming Layer (Windows)
+     * Notes:
+     *   - Left shift is a toggle. Hold for normal shift, double tap to hold down until tapped again
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |  Esc   |   1  |   2  |   3  |   4  |   5  | FN20 |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
@@ -127,7 +129,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ESC,   1,   2,   3,   4,   5,  FN20,
         TAB,   Q,   W,   E,   R,   T,  FN21,
         LCTL,  A,   S,   D,   F,   G,
-        LSFT,  Z,   X,   C,   V,   B,   NO,
+        FN27,  Z,   X,   C,   V,   B,   NO,
         LCTL,MPLY,MNXT, VOLD, VOLU,
                                        FN24, Y,
                                             NO,
@@ -220,6 +222,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     [24] = ACTION_MACRO(GOOD_GAME),                // Macro: say `gg`
     [25] = ACTION_MODS_KEY(MOD_LCTL | MOD_LALT | MOD_LGUI, KC_U), // Test class: ctrl+alt+cmd+u
     [26] = ACTION_MODS_KEY(MOD_LCTL | MOD_LALT | MOD_LGUI, KC_G), // Test class again: ctrl+alt+cmd+g
+    [27] = ACTION_MODS_TAP_TOGGLE(MOD_LSFT),       // Toggle left shift
 
     // Teensy
     [31] = ACTION_FUNCTION(TEENSY_KEY),            // Teensy key

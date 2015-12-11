@@ -24,6 +24,9 @@ Project located at <https://github.com/benblazak/ergodox-firmware>
 #ifndef CONFIG_H
 #define CONFIG_H
 
+/* Two taps to toggle */
+#define TAPPING_TOGGLE 2
+
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
