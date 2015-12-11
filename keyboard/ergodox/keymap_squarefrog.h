@@ -102,20 +102,22 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * Keymap 2: Gaming Layer (Windows)
      * Notes:
      *   - Left shift is a toggle. Hold for normal shift, double tap to hold down until tapped again
+     *   - FN20: Shadow play - save last X minutes
+     *   - FN21: Shadow play - toggle recording
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |  Esc   |   1  |   2  |   3  |   4  |   5  | FN20 |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
+     * |        |   1  |   2  |   3  |   4  |   5  | FN20 |           |  -   |   6  |   7  |   8  |   9  |   0  |   +    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN21 |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|      |           | -L2  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------|  Esc |           | -L2  |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtrl| Play | Next | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |  gg  |   Y  |       | PgUp | PgDn |
+     *                                        |  gg  |      |       | PgUp | PgDn |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      |      |       | RAlt |      |      |
      *                                 | Space| Enter|------|       |------| Enter| BkSp |
@@ -126,12 +128,12 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
         // left hand
-        ESC,   1,   2,   3,   4,   5,  FN20,
+        NO,    1,   2,   3,   4,   5,   FN20,
         TAB,   Q,   W,   E,   R,   T,  FN21,
         LCTL,  A,   S,   D,   F,   G,
-        FN27,  Z,   X,   C,   V,   B,   NO,
+        FN27,  Z,   X,   C,   V,   B,  ESC,
         LCTL,MPLY,MNXT, VOLD, VOLU,
-                                       FN24, Y,
+                                       FN24,NO,
                                             NO,
                                   SPC, ENT,FN11,
         // right hand
