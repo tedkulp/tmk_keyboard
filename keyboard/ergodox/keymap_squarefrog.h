@@ -215,8 +215,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     [11] = ACTION_LAYER_MOMENTARY(1),              // Push Layer 1
 
     // Short modifier shortcuts
-    [20] = ACTION_MODS_KEY(MOD_LALT, KC_F11),      // Take in game screenshot ????
-    [21] = ACTION_MODS_KEY(MOD_LALT, KC_F12),      // Save shadow play ????
+    [20] = ACTION_MODS_KEY(MOD_LALT, KC_F10),      // Shadow play: save last X minutes
+    [21] = ACTION_MODS_KEY(MOD_LALT, KC_F9),       // Shadow play: toggle manual recording
     [22] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),     // Shift+' - "
     [23] = ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),     // Shift+; - :
     [24] = ACTION_MACRO(GOOD_GAME),                // Macro: say `gg`
