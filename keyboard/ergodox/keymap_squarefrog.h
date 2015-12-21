@@ -111,13 +111,13 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN21 |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|  Esc |           | -L2  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------|  Esc |           |  L0  |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtrl| Play | Next | Vol- | Vol+ |                                       |      |      | RAlt | RGui | RCtrl |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |  gg  |      |       | PgUp | PgDn |
+     *                                        |  gg  |  F12 |       | PgUp | PgDn |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      |      |       | RAlt |      |      |
      *                                 | Space| Enter|------|       |------| Enter| BkSp |
@@ -133,14 +133,14 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LCTL,  A,   S,   D,   F,   G,
         FN27,  Z,   X,   C,   V,   B,  ESC,
         LCTL,MPLY,MNXT, VOLD, VOLU,
-                                       FN24,NO,
+                                       FN24,F12,
                                             NO,
                                   SPC, ENT,FN11,
         // right hand
            MINS,  6,   7,    8,   9,   0,   EQL,
            RBRC,  Y,   U,    I,   O,   P,   BSLS,
                   H,   J,    K,   L,  SCLN, QUOT,
-           FN1,   N,   M,  COMM, DOT, SLSH, RSFT,
+           FN0,   N,   M,  COMM, DOT, SLSH, RSFT,
                        NO,   NO, RALT,RGUI, RCTL,
         PGUP,PGDN,
         RALT,
@@ -238,7 +238,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     switch (id) {
         case GOOD_GAME:
             return (record->event.pressed ?
-                    MACRO( I(70), T(T), T(G), T(G), T(ENT), END ) :
+                    MACRO( I(100), T(T), T(G), T(G), T(ENT), END ) :
                     MACRO_NONE );
     }
     return MACRO_NONE;
